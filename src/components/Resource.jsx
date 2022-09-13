@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+`
+
+const Holder = styled.div`
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap:wrap;
     padding: 5px;
     margin: 20px 0;
 
@@ -17,6 +26,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
     width: calc((100% / 3) - 100px);
     min-width: 250px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,38 +60,47 @@ const Item = styled.li`
     width: 100%;
     padding: 5px 10px;
     color: rgba(5, 5, 5, 0.5);
+    font-size: 18px;
+    font-family: cursive;
     &:hover{
         cursor: pointer;
         background-color: #e2e2e2;
+        color: aqua;
     }
 `
 
-export default function Resource() {
+const Link = styled.a`
+    width: 100%;
+    height: inherit;
+    text-decoration: none;
+    color: inherit;
+`
+
+export default function Resource({ourData}) {
+
+    const [data, setData] = useState('');
+
+    useEffect(() => {
+        setData(ourData)
+
+    }, [data])
   return (
     <Container>
-        <Wrapper>
-            <Title>Channels</Title>
-            <ItemContainer>
-                <Item>Dcode</Item>
-                <Item>Mosh</Item>
-            </ItemContainer>
-        </Wrapper>
+         <Title>{data && data.name}</Title>
+         
 
-        <Wrapper>
-            <Title>Channels</Title>
-            <ItemContainer>
-                <Item>Dcode</Item>
-                <Item>Mosh</Item>
-            </ItemContainer>
-        </Wrapper>
-
-        <Wrapper>
-            <Title>Channels</Title>
-            <ItemContainer>
-                <Item>Dcode</Item>
-                <Item>Mosh</Item>
-            </ItemContainer>
-        </Wrapper>
+        <Holder>
+        {data && data.items.map(item => {
+            return <Wrapper key={item.name}>
+                <Title>{item.name}</Title>
+                <ItemContainer>
+                    {item.res.map(res => {
+                        return <Item key={res.id}><Link href={res.url} target='_blank' >{res.name}</Link></Item>
+                    })}
+                </ItemContainer>
+            </Wrapper>
+        })}
+        </Holder>
     </Container>
   )
 }

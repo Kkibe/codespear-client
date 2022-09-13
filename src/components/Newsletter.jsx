@@ -58,7 +58,7 @@ export const Newsletter = () => {
   return (
     <Container>
         <Title>Subscribe</Title>
-        <Text>Don’t miss to subscribe to our new feeds, kindly fill the form below.</Text>
+        <Text>Don’t miss out on juiciest news! Fill the form below to subscribe to our new feeds.</Text>
         <InputContainer>
           <Input type="email" placeholder="example@gmail.com"/>
           <Button>

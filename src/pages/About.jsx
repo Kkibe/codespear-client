@@ -29,11 +29,9 @@ const Title = styled.h3`
 `
 const Description = styled.div`
     width: 90%;
-    border: 1px solid teal;
-
     font-family: fantasy;
-    padding: 10px 10px;
-    margin-bottom: 30px;
+    padding: 20px 10px;
+    margin: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,6 +63,7 @@ const Span = styled.span`
     font-size: 17px;
     text-align: center;
     margin: 20px;
+    padding: 20px;
 `
 
 export const About = () => {

@@ -19,3 +19,8 @@ body {
   padding: inherit;
   cursor: pointer;
 }
+
+.inCart{
+  background-color: darkcyan;
+  color: white;
+}

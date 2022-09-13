@@ -16,7 +16,7 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-    width: calc((100% - 50px) / 4);
+    width: calc((100% - 50px) / 3);
     height: 70%;
     margin: 20px 0px;
     display: flex;
@@ -47,7 +47,7 @@ const Item = styled.li`
     list-style: none;
     &:hover{
         cursor: pointer;
-        background-color: #b4b4b4;
+        background-color: #adadad;
     }
 
 `
@@ -62,13 +62,8 @@ const FooterBottom = styled.div`
     margin-top: 10px;
 `
 
-const Text = styled.p`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    
-`
+const Text = styled.p``
+
 const Break = styled.hr`
     width: 90%;
     border-radius: 50%;
@@ -79,11 +74,7 @@ const Break = styled.hr`
 export const Footer = (props) => {
   return (
     <Container>
-        <Wrapper>
-            <Title>Codespear</Title>
-            <Break />
-            <Text>About the company, little discription goes here..</Text>
-        </Wrapper>
+
         <Wrapper>
             <Title>Quick Links</Title>
             <Break />

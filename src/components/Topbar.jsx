@@ -1,4 +1,4 @@
-import { Logout, Search } from '@mui/icons-material';
+import { LightMode, Logout, Nightlight, Search } from '@mui/icons-material';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -145,9 +145,8 @@ const Button = styled.button`
 export const Topbar = () => {
   const signedUser = useAuth();
   const [user, setUser] = useState('');
-  useEffect(() => {
-    setUser(signedUser);
-  }, [signedUser]);
+  const [mode, setMode] = useState('');
+
 
   const handleSignOut = () => {
     logOut();
@@ -156,6 +155,33 @@ export const Topbar = () => {
   const handleAdd = () => {
     addCourse();
   }
+
+  const handleModeChange = () => {
+    if(localStorage.key('mode')){
+      document.querySelector("body").classList.add("darkMode");
+    } else return;
+  }
+
+
+
+const handleChangeMode = () => {
+     document.querySelector("body").classList.toggle("darkMode");
+     document.querySelector('.input').classList.toggle("darkMode");
+    
+    if(document.querySelector("body").classList.includes("darkMode")){
+        localStorage.setItem("mode", "darkMode");
+    } else {
+        localStorage.removeItem('mode');
+    }
+};
+
+
+useEffect(() => {
+  setUser(signedUser);
+  handleModeChange()
+  setMode(localStorage.getItem('mode'))
+}, [signedUser]);
+
   return (
     <Container >
       <Icon src={Image} onClick={handleAdd}/>
@@ -180,6 +206,17 @@ export const Topbar = () => {
                 color: isActive ? "#68478D" : "",
               };
             }}>Courses</NavLink></Item>
+        <Item><NavLink to='/blog' className='link' style={({ isActive }) => {
+              return {
+                color: isActive ? "#68478D" : "",
+              };
+            }}>Blog</NavLink></Item>
+
+        <Item><NavLink to='/store' className='link' style={({ isActive }) => {
+              return {
+                color: isActive ? "#68478D" : "",
+              };
+            }}>Store</NavLink></Item>
         <Item><NavLink to='/about' className='link' style={({ isActive }) => {
               return {
                 color: isActive ? "#68478D" : "",
@@ -211,6 +248,15 @@ export const Topbar = () => {
             <Button bg='black'><Link to='register' className='link' >REGISTER</Link></Button>
           </UserContainer>
         }
+        <Button  className="darkModeBtn"
+        style={{
+          width: '40px',
+          height: '40px',
+          borderRadius: '50%',
+          backgroundColor: 'black'
+        }}
+         onClick = {handleChangeMode}>{mode && <Nightlight />} {!mode && <LightMode />}</Button>
+        
         <UserCard >
           <UserCardList>
             <CardItem>Update profile</CardItem>

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Courasel } from '../components/Courasel';
 import { Newsletter } from '../components/Newsletter';
 import { Featured } from '../components/Featured';
 import Bg from '../assets/home.svg';

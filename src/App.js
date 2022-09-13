@@ -13,11 +13,14 @@ import { Contact } from './pages/Contact';
 import { ArrowUpward } from '@mui/icons-material';
 import { Courses } from './pages/Courses';
 import { useAuth } from './firebase';
+import {Blogs} from './pages/Blogs';
+import {Blog} from './pages/Blog';
 import {
   Routes,
   Route,
 } from "react-router-dom";
 import Resources from './pages/Resources';
+import Store from './pages/Store';
 
 const Container = styled.div`
   width: 100vw;
@@ -70,6 +73,10 @@ export default function App() {
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='courses' element={<Courses />} />
+          <Route path='courses/javascript' element={<Course />} />
+          <Route path='blog' element={<Blogs />} />
+          <Route path='store' element={<Store />} />
+          <Route path='blog/1' element={<Blog />} />
           <Route path='about' element={<About />} />
           <Route path='contact' element={<Contact />} />
           <Route path='resources' element={<Resources />} />
