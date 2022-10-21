@@ -33,13 +33,13 @@ const Container = styled.div`
 
 `
 
-const Title = styled.p`
+const Title = styled.h2`
   width: 100%;
   text-align: center;
   font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #9c9c9c;
+  color: #2c2b2b;
   margin: 20px 0;
 `
 

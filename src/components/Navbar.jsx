@@ -7,34 +7,34 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 20px;
-    background-color: #c8e098;
+    padding: 0 20px;
+    background-color: #2c2b2b;
+    color: white;
+    position: relative;
 `
 
 const Item = styled.a`
     font-size: 20px;
     text-decoration: none;
+    color: #ebf4fc;
     &:hover{
         cursor: pointer;
-        text-shadow: 5px 5px 12px #009A17, -5px -5px 12px #009A17;
-        text-decoration: dashed;
-
+        text-decoration: underline;
     }
 `
 
 export const Navbar = () => {
   return (
-    <Container>
-        <Item>Java</Item>
+    <Container className='header'>
+        
         <Item>JavaScript</Item>
-        <Item>C</Item>
         <Item>Python</Item>
+        <Item>Java</Item>
+        <Item>C</Item>
         <Item>C++</Item>
-        <Item>Kivy</Item>
-        <Item>Dart</Item>
         <Item>jQuery</Item>
         <Item>PHP</Item>
-        <Item>Laravel</Item>
+        <Item>MySQL</Item>
     </Container>
   )
 }

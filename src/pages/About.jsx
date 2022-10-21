@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Facebook, GitHub, Instagram, LinkedIn, Reddit, Telegram, Twitter, YouTube} from '@mui/icons-material';
-import Bg from '../assets/blob.svg'
-import { Newsletter } from '../components/Newsletter';
 
 const Container = styled.div`
     width: 100%;
@@ -11,10 +9,6 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(${Bg});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
                                                                                                                                            
 `
 
@@ -50,10 +44,15 @@ const IconContainer = styled.div`
     align-content: center;
     justify-content: space-between;
     padding: 0 50px;
+`
 
-    *:hover{
+const Icon = styled.a`
+    width: fit-content;
+    height: fit-content;
+    color: #7e7e7e;
+    &:hover{
         cursor: pointer;
-        box-shadow: 5px 5px 12px #5d83c0, -5px -5px 12px #5d83c0;
+        box-shadow: 5px 5px 12px #06729c, -5px -5px 12px #06729c;
         border-radius: 6px;
     }
 `
@@ -66,30 +65,92 @@ const Span = styled.span`
     padding: 20px;
 `
 
+const FaqContainer = styled.div`
+width: 80%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+.active{
+    background-color: #ccc;
+  }
+`
+
+const Item = styled.div`
+width: 100%;
+
+`
+
+const Button = styled.button`
+background-color: #eee;
+color: #444;
+cursor: pointer;
+padding: 18px;
+width: 100%;
+text-align: left;
+border: none;
+outline: none;
+transition: 0.4s;
+
+&:hover {
+    background-color: #ccc;
+  }
+`
+
+const Panel = styled.div`
+padding: 0 18px;
+background-color: white;
+display: none;
+overflow: hidden;
+cursor:pointer;
+&:hover{
+    background:#f0fefe;
+  }
+`
+
 export const About = () => {
+    const handleToggle = (e) => {
+        e.classList.toggle("active");
+        var panel = e.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+        }
+    }
   return (
     <Container>
         <Title>LEARN WITH CODESHERE</Title>
         <Description>
-            
-            The world is expanding digitally and with every aspect of our lives 
-            becoming digital, the demand for computer experts is skyrocketing each day. 
-            Therefore, having knowledge of programming languages has become crucial for every IT professional <br />
-            Learn fundamental skill to become a software developer and create.
-            software programs that are marketable to over 2 billion people today.
+            The world is expanding digitally and with every aspect of our lives becoming digital,
+            the demand for computer experts is skyrocketing each day. Therefore,
+            having knowledge of programming languages has become crucial for every IT professional.
+            In fact, programming languages sit at the epicentre of this ever-growing field of Computer Science.
+            If you are a beginner in programming, learning a new language or a new framework is essential.
         </Description>
+        <Span>FAQ</Span>
+        <FaqContainer>
+            <Item>
+                <Button onClick ={handleToggle}>
+                    Websites
+                </Button>
+                <Panel>
+                   <p >W3Schools</p>
+                   <p >freeCodeCamp</p>
+                </Panel>
+            </Item>
+        </FaqContainer>
         <Span>Connect with us</Span>
         <IconContainer>
-            <Facebook />
-            <Twitter />
-            <Instagram />
-            <LinkedIn />
-            <YouTube />
-            <GitHub />
-            <Reddit />
-            <Telegram />
+            <Icon><Facebook /></Icon>
+            <Icon><Twitter /></Icon>
+            <Icon><Instagram /></Icon>
+            <Icon><LinkedIn /></Icon>
+            <Icon><YouTube /></Icon>
+            <Icon><GitHub /></Icon>
+            <Icon><Reddit /></Icon>
+            <Icon><Telegram /></Icon>
         </IconContainer>
-        <Newsletter />
     </Container>
   )
 }

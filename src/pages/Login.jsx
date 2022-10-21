@@ -1,8 +1,7 @@
-import { Google, Facebook, GitHub } from '@mui/icons-material';
+import { Google, Facebook} from '@mui/icons-material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Bg from '../assets/login.svg';
 import { signIn } from '../firebase';
 
 const Container = styled.div`
@@ -13,10 +12,6 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(${Bg});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     @media (max-width: 1200px) {
       transform: scale(0.7);
     }
@@ -77,33 +72,43 @@ const Span = styled.span`
 `
 
 const FormLink = styled.a`
-    margin-top: 30px;
-    margin-bottom: 12px;
+    color: #06729c;
+    *{
+      color: inherit;
+    }
 `
 const Title = styled.h1`
     font-size: 34px;
     font-weight: 700;
     line-height: 3;
-    color: #181818;
+    color: #2c2b2b;
 `
 
 const Button = styled.button`
-    width: 180px;
-    height: 50px;
-    border-radius: 25px;
-    margin-top: 50px;
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 1.15px;
-    background-color: #4B70E2;
-    color: #f9f9f9;
-    
-    border: none;
-    outline: none;
-    &:hover{
-      box-shadow: 5px 5px 12px #d1d9e6, -5px -5px 12px #f9f9f9;
-      cursor: pointer;
-    }
+
+width: 150px;
+height: 40px;
+border-radius: 10px;
+margin-top: 20px;
+font-size: 17px;
+font-weight: 500;
+background-color: ${(props) => props.bg ? props.bg : "#06729c"};
+color: #f9f9f9;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+
+border: none;
+outline: none;
+&:hover{
+  background: #4B70E2;
+  cursor: pointer;
+}
+
+span{
+  height: 100%;
+  text-align: center;
+}
 `
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -118,27 +123,26 @@ export const Login = () => {
         alert("You have entered an invalid email address!");
       }
       
-    } else return;
+    } else return; 
     
   }
   return (
     <Container>
             <Form onSubmit={handleLogin}>
                 <Title>Welcome Back</Title>
-                <IconContainer>
-                  <Google />
-                  <Facebook />
-                  <GitHub />
-                </IconContainer>
-                <Span>
-                  OR
-                </Span>
                 <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <Button type='submit'>SIGN IN</Button>
+                <Span>
+                  Sign In With:
+                </Span>
+                <IconContainer>
+                  <Button bg="#f14141"><Span>Google</Span><Google /> </Button>
+                  <Button bg="#4B70E2"><Span>Facebook</Span><Facebook /></Button>
+                </IconContainer>
             </Form>
             <Span>
-              Already registered? Login <FormLink><Link to='/register' className='login'>here</Link></FormLink>
+              Don't have an account? Register <FormLink><Link to='/register'>here</Link></FormLink>
             </Span>
     </Container>
   )

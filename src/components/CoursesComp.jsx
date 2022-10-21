@@ -15,7 +15,7 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 1.5rem;
   font-weight: 700;
-  color: #9c9c9c;
+  color: #2c2b2b;
   text-align: center;
   line-height: 1.125;
   margin-bottom: 1.1rem;
@@ -28,28 +28,39 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 20px 0;
   background-color: transparent;
   padding: 10px 10px;
 `
 const Course = styled.div`
-    width: 5rem;
-    height: 5rem;
+    width: calc((100% - 80px)/6) ;
+    min-width: 100px;
+    height: 100px;
     margin: 20px 20px;
     padding: 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
-    padding: 5px 5px;
+    background: #ebf4fc;
+    border-radius: 10px;
+    box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    &:hover{
+      background: #7e7e7e;
+      h1{
+        
+        color: #ebf4fc;
+      }
+      
+  }
 `
 
 const CourseTitle = styled.h1`
   font-size: 1.1rem;
   font-weight: 300;
-  color: #9c9c9c;
+  color: #7e7e7e;
   text-align: center;
   line-height: 1.1;
 `
@@ -73,7 +84,7 @@ export const CoursesComp = () => {
               <Course key={course.id}>
                 <Icon src={course.img}/>
                 <CourseTitle>{course.name}</CourseTitle>
-            </Course>
+              </Course>
             )
           })}
         

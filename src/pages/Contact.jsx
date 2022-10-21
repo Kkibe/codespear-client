@@ -9,7 +9,6 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
 `
 
 const Title = styled.h1`
@@ -17,7 +16,7 @@ const Title = styled.h1`
   margin: 0 auto;
   padding: 40px 0;
   font: 300 60px 'Oswald', sans-serif;
-  color: #fff;
+  color: #2c2b2b;
   text-transform: uppercase;
   letter-spacing: 6px
 `
@@ -33,6 +32,7 @@ const Wrapper = styled.div`
 
 const Form = styled.form`
   width: 450px;
+  padding: 20px;
   font-family: 'Lato';
   font-weight: 400;
   display: flex;
@@ -47,33 +47,40 @@ const Form = styled.form`
 
 const Input = styled.input`
 
-  width: 400px;
+  width: 350px;
   height: 35px;
-  background-color: #3b3b3b;
   border: none;
-  color: #fff;
-  letter-spacing: 1px; 
   margin-bottom: 20px;
-  padding: 0 5px;
+  padding: 0 10px;
   outline: none;
+  
+
+  font-family: "Montserrat", sans-serif;
+  background-color: #ecf0f3;
+
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
   @media screen and (max-width: 569px) {
     width: 280px;
   }
+
 `
 
 const Text = styled.textarea`
-  width: 400px;
-  min-height: 200px;
-  background-color: #3b3b3b;
-  margin-bottom: 20px;
-  color: #fff;
-  letter-spacing: 1px;
-  padding: 0 5px;
-  outline: none;
-  @media screen and (max-width: 569px) {
+width: 350px;
+height: 200px;
+border: none;
+margin-bottom: 20px;
+padding: 10px;
+outline: none;
 
-    width: 280px;
-  }
+
+font-family: "Montserrat", sans-serif;
+background-color: #ecf0f3;
+
+box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+@media screen and (max-width: 569px) {
+  width: 280px;
+}
 `
 
 const Button = styled.button`
@@ -119,7 +126,7 @@ const ContactList = styled.ul`
 const ContactItem = styled.li`
 width: 100%;
   line-height: 4;
-  color: #aaa;
+  color: #7e7e7e;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -136,6 +143,10 @@ width: 100%;
         line-height: 55px;
     }
   }
+  &:hover{
+      color: #2c2b2b;
+  }
+
 `
 
 const ContactText = styled.div`
@@ -170,44 +181,23 @@ const SocialIcons = styled.ul`
   padding: 0;
 `
 const SocialIcon = styled.li`
-  position: relative; 
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
-  color: #fff;
-  background-color: rgb(27,27,27);
+  color: #7e7e7e;
+  background-color: #ebf4fc;
   cursor: pointer; 
-  transition: all .2s ease-in-out;
   a{
-    color: #fff;
-  }
-  &::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    border-radius: 50%;
-    opacity: 0;
-    box-shadow: 0 0 0 1px #fff;
-    transition: all .2s ease-in-out;
+    color: #7e7e7e;
   }
 
   &:hover{
-    background-color: #fff; 
-    a {
-        color: #000;
-    }
-    &::after{
-        opacity: 1;  
-        transform: scale(1.12);
-        transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+    background: #7e7e7e;
+    a{
+      color: #2c2b2b;
     }
   }
 `
@@ -228,8 +218,8 @@ export const Contact = () => {
       <Title>Contact</Title>
       <Wrapper>
         <Form>
-          <Input type="text"  placeholder="NAME" value="" required />
-          <Input type="email"  placeholder="EMAIL" value="" required />
+          <Input type="text"  placeholder="NAME"  required />
+          <Input type="email"  placeholder="EMAIL" required />
           <Text placeholder="MESSAGE" required/>
           <Button type="submit" >SEND</Button>
         </Form>

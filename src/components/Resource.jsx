@@ -15,7 +15,7 @@ const Holder = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-wrap:wrap;
-    padding: 5px;
+    
     margin: 20px 0;
 
     @media screen and (max-width: 780px) {
@@ -30,10 +30,11 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     justify-content: space-between;
-    background-color: #d3d3d3;
+    background-color: #ebf4fc;
     border-radius: 10px;
+    box-shadow: 2px 3px 2px 3px rgba(0, 0, 0, 0.4);
     @media screen and (max-width: 780px) {
         width: 80%;
     }
@@ -41,7 +42,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
     width: 100%;
-    color: #0ead16;
+    color: #046A38;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
@@ -59,13 +60,13 @@ const ItemContainer = styled.ul`
 const Item = styled.li`
     width: 100%;
     padding: 5px 10px;
-    color: rgba(5, 5, 5, 0.5);
+    color: #2c2b2b;
     font-size: 18px;
     font-family: cursive;
     &:hover{
         cursor: pointer;
-        background-color: #e2e2e2;
-        color: aqua;
+        background-color: #7e7e7e;
+        ;
     }
 `
 

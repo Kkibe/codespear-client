@@ -9,7 +9,7 @@ import { addCourse, logOut, useAuth } from '../firebase';
 
 const Container = styled.div`
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,7 +39,7 @@ const SearchContainer = styled.div`
     justify-content: space-between;
     background-color: white;
     padding: 5px 0px;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
 `
 
@@ -49,6 +49,7 @@ const Input = styled.input`
     outline: none;
     flex: 7;
     height: inherit;
+    color: #2c2b2b;
 `
 const Navigation = styled.div`
   display: flex;
@@ -67,11 +68,12 @@ const Item = styled.div`
   justify-content: center;
   color:hsl(51.1,50%, 95%);
   transition:all 250ms ease-out;
+  padding: 5px;
   cursor: pointer;
   &:hover{
-    transform: scale(1.05);
-    text-shadow: 5px 5px 2.3px #89388e;
-    
+    transform: scale(1.02);
+    color: #68478D;
+
   }
 
 `
@@ -189,9 +191,10 @@ useEffect(() => {
         <Input type='search'/>
         <Search style={{
           height: '35px',
-          flex: 2,
-          backgroundColor: 'teal',
-          cursor: 'pointer'
+          flex: 3,
+          backgroundColor: '#06729c',
+          cursor: 'pointer',
+          padding: '3px'
         }}/>
       </SearchContainer>
       <Navigation>
@@ -211,12 +214,6 @@ useEffect(() => {
                 color: isActive ? "#68478D" : "",
               };
             }}>Blog</NavLink></Item>
-
-        <Item><NavLink to='/store' className='link' style={({ isActive }) => {
-              return {
-                color: isActive ? "#68478D" : "",
-              };
-            }}>Store</NavLink></Item>
         <Item><NavLink to='/about' className='link' style={({ isActive }) => {
               return {
                 color: isActive ? "#68478D" : "",
@@ -244,8 +241,8 @@ useEffect(() => {
             }}/></Button>}
         {user && <User src={user.photoURL ? user.photoURL : UserImage} />}
         {!user && <UserContainer>
-            <Button bg='teal'><Link to='login' className='link' >LOGIN</Link></Button>
-            <Button bg='black'><Link to='register' className='link' >REGISTER</Link></Button>
+            <Button bg='#06729c'><Link to='login' className='link' >LOGIN</Link></Button>
+            <Button bg='#000000e6'><Link to='register' className='link' >REGISTER</Link></Button>
           </UserContainer>
         }
         <Button  className="darkModeBtn"
@@ -253,7 +250,7 @@ useEffect(() => {
           width: '40px',
           height: '40px',
           borderRadius: '50%',
-          backgroundColor: 'black'
+          backgroundColor: '#000000e6'
         }}
          onClick = {handleChangeMode}>{mode && <Nightlight />} {!mode && <LightMode />}</Button>
         

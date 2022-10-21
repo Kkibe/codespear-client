@@ -1,7 +1,7 @@
-import { Google, Facebook, GitHub } from '@mui/icons-material';
+import { Google, Facebook} from '@mui/icons-material';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Bg from '../assets/register.svg';
 import { signUp, updateUser } from '../firebase';
 
 const Container = styled.div`
@@ -12,10 +12,6 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(${Bg});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 
 `
 
@@ -64,32 +60,42 @@ const Span = styled.span`
 `
 
 const FormLink = styled.a`
-
-    color: teal;
+    color: #06729c;
+    *{
+      color: inherit;
+    }
 `
 const Title = styled.h1`
     font-size: 34px;
     font-weight: 700;
     line-height: 3;
-    color: #181818;
+    color: #2c2b2b;
 `
 
 const Button = styled.button`
-    width: 180px;
-    height: 50px;
-    border-radius: 25px;
-    margin-top: 50px;
+
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 17px;
     font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 1.15px;
-    background-color: teal;
+    background-color: ${(props) => props.bg ? props.bg : "#06729c"};
     color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     
     border: none;
     outline: none;
     &:hover{
-      box-shadow: 5px 5px 12px #d1d9e6, -5px -5px 12px #f9f9f9;
+      background: #4B70E2;
       cursor: pointer;
+    }
+
+    span{
+      height: 100%;
+      text-align: center;
     }
 `
 export const Register = () => {
@@ -123,26 +129,25 @@ export const Register = () => {
       alert('enter email and password');
       return;
     }
-  }
+  } 
   return (
     <Container>
             <Form onSubmit={handleRegister}>
                 <Title>Create Account</Title>
-                <IconContainer>
-                  <Google />
-                  <Facebook />
-                  <GitHub />
-                </IconContainer>
-                <Span>
-                  OR
-                </Span>
                 <Input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
                 <Input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
                 <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                 <Button type='submit'>SIGN UP</Button>
+                <Span>
+                  Continue With:
+                </Span>
+                <IconContainer>
+                  <Button bg="#f14141"><Span>Google</Span><Google /> </Button>
+                  <Button bg="#4B70E2"><Span>Facebook</Span><Facebook /></Button>
+                </IconContainer>
             </Form>
             <Span>
-              Don't have an account? Register <FormLink>here</FormLink>
+              Already registered? Login <FormLink><Link to='/login'>here</Link></FormLink>
             </Span>
     </Container>
   )

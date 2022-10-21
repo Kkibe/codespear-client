@@ -10,11 +10,11 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     position: relative;
-    background-color: black;
+    background: #000000e6;
 `
 
 const Title = styled.h1`
-  color: #fff;
+  color: #f9f9f9;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 40px;
@@ -42,13 +42,13 @@ const Input = styled.input`
   flex: 1;
   width: 100%;
   padding: 14px 28px;
-  background: #2E2E2E;
-  border: 1px solid #2E2E2E;
-  color: #fff;
+  background: #2c2b2b;
+  border: 1px solid #2c2b2b;
+  color: #f9f9f9;
 `
 
 const Button = styled.button`
-    background: #2dc245;
+    background: #89e97c;
     padding: 13px 20px;
     border: none;
     cursor: pointer;

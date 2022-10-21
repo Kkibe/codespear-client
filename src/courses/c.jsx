@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+   Link
+} from "react-router-dom";
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -244,6 +247,9 @@ const C = () => {
                     To create a simple C program which prints "Hello, World" on the screen, use a text editor to create a new file 
                     (e.g. hello.c — the file extension must be .c) containing the following source code:
                 </Description>
+                <Code >
+                  code here
+                </Code>
               </Content>
             </Wrapper>
         </Container>

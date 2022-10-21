@@ -1,91 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-`
-
-const Sidebar = styled.div`
-  max-width: 290px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-right: 2px solid #00C0A3;
-  top: 0;
-  position: fixed;
-  left: 2px;
-`
-
-const Title = styled.h1`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: 400;
-  margin-bottom: 10px;
-  color: ${props => props.bg};
-`
-const Navigation = styled.ul`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow-y: auto;
-  overflow-x: hidden;
-`
-
-const Item = styled.li`
-    width: 100%;
-    padding-left: 5px;
-    list-style: none;
-    margin-bottom: 10px;
-`
-const Wrapper = styled.div`
-  width: calc(100% - 290px);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 0;
-  top: 0;
-`
-const Content = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 10px;
-  padding: 5px 5px 5px 5px;
-`
-
-const Description = styled.p`
-    width: 100%;
-    margin-bottom: 5px;
-    padding-left: 5px;
-    margin-bottom: 5px;
-    line-height: 1.5em;
-`
-const Code = styled.div`
-  width: 98%;
-  padding-left: 20px;
-  margin: 10px;
-  background-color: #131212;
-  color: #CBA135;
-  font-family: 	'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-`
-const Break = styled.br``
-
+import {Container, Sidebar, Title, Navigation, Item , Wrapper, Content, Description, Code, Break} from './StyledComponents';
 
 const Course = () => {
   const code = function greetMe(yourName) { alert("Hello " + yourName); }
@@ -125,7 +39,7 @@ const Course = () => {
               </Navigation>
             </Sidebar>
             <Wrapper>
-              <Title></Title>
+              <Title>JavaScript Documentation</Title>
               <Content>
                 <Title>Introduction</Title>
                 <Description>
@@ -134,8 +48,6 @@ const Course = () => {
 Client-side JavaScript extends the core language by supplying objects to control a browser and its Document Object Model (DOM). For example, client-side extensions allow an application to place elements on an HTML form and respond to user events such as mouse clicks, form input, and page navigation.
 Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server. For example, server-side extensions allow an application to communicate with a database, provide continuity of information from one invocation to another of the application, or perform file manipulations on a server.
                 </Description>
-                
-
               </Content>
               <Content>
                 <Title>Hello World!</Title>
@@ -143,14 +55,8 @@ Server-side JavaScript extends the core language by supplying objects relevant t
                   To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:
                 </Description>
                 <Code>
-
-<iframe height="300" style={{width: '100%'}} scrolling="no" title="Simple CSS Grid Dashboard" src="https://codepen.io/trooperandz/embed/YRpKjo?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/trooperandz/pen/YRpKjo">
-  Simple CSS Grid Dashboard</a> by Matthew Holland (<a href="https://codepen.io/trooperandz">@trooperandz</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+                  Lorem ipsum
                 </Code>
-              
 
 
               </Content>

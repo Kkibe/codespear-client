@@ -47,7 +47,7 @@ const Item = styled.li`
     list-style: none;
     &:hover{
         cursor: pointer;
-        background-color: #adadad;
+        background-color: #7e7e7e;
     }
 
 `

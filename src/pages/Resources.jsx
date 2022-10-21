@@ -10,7 +10,6 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(255, 117, 58);
 `
 
 const Wrapper = styled.div`

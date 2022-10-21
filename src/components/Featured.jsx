@@ -35,7 +35,7 @@ const Title = styled.h1`
   font-weight: 400;
   text-align: center;
   font-size: 1.5rem;
-  color: #9c9c9c;
+  color: #2c2b2b;
   line-height: 1.125;
   margin-bottom: 1.25rem;
   margin-top: 10px;
@@ -44,14 +44,14 @@ const Title = styled.h1`
 const Item = styled.div`
   width: 300px;
   height: 350px;
-  border: 1px solid #aa1aaa;
+  border: 1px solid #68478D;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 20px 10px;
-  background-color: #bdbaba;
+  background: #ebf4fc;
   margin: 20px 20px;
 `
 
@@ -65,17 +65,17 @@ const Image = styled.img`
 `
 
 const Break = styled.hr`
-  width: 100%;
+  width: 80%;
   height: 1px;
-  background-color:  #f55b23;
   border-radius: 50%;
+  background: #68478D;
 `
 
 const Description = styled.p`
   width: 100%;
   padding: 20px 20px;
   line-height: 1.8em;
-  color: #4b4a4a;
+  color: #2c2b2b;
 `
 
 export const Featured = () => {
@@ -101,7 +101,8 @@ export const Featured = () => {
                 <Image src={JavaScript}/>
                 <Break />
                 <Description >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, ipsa ex quod voluptate,
+                  JavaScript can be connected to the objects of its environment 
+                  to provide programmatic control over them.
                 </Description>
             </Item>
         </Wrapper>
