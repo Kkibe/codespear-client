@@ -20,6 +20,7 @@ import {
 } from "react-router-dom";
 import { useAuth } from './firebase';
 import { ArrowUpward } from '@mui/icons-material';
+import ModalPopup from './components/ModalPopup';
 
 
 
@@ -31,6 +32,8 @@ const Container = styled.div`
   flex-direction: column;
   margin-top: 80px;
   overflow-x: hidden;
+  position:relative;
+  
 `
 
 const ButtonToTop = styled.button`
@@ -71,6 +74,7 @@ export default function App() {
   return (
     <Container>
       <Topbar />
+      <ModalPopup />
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='courses' element={<Courses />} />

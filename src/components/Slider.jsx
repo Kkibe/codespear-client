@@ -139,7 +139,7 @@ export default function Slider() {
         <div className="info">
             <h1>HTML</h1>
             <p>
-                 Relax and play platform games like famous Nokia snake game right in your browser.
+                HTML stands for Hyper Text Tranfer Proctocol and it is used to develop web applications.
             </p>
             <button>Explore</button>
         </div>
@@ -152,7 +152,8 @@ export default function Slider() {
         <div className="info">
             <h1>JAVASCRIPT</h1>
             <p>
-               A free full-featured online code editor for HTML, CSS and JAVASCRIPT.
+            JavaScript is the most used programming language in the world. Even famous social media platforms 
+            such as Facebook, Google, or YouTube, use JavaScript in their infrastructure. 
             </p>
             <button className='button'>Visit Now</button>
         </div>
@@ -165,7 +166,8 @@ export default function Slider() {
         <div className="info">
             <h1>PYTHON</h1>
             <p>
-                Stream and  enjoy playing video content only on bigplay.
+            The ever-growing importance of data in business has resulted 
+            in a quick rise in popularity and demand for Python.
             </p>
             <button>Visit Now</button>
         </div>
@@ -178,7 +180,8 @@ export default function Slider() {
         <div className="info">
             <h1>JAVA</h1>
             <p>
-                Learn to develop high quality UI experience on android apps with java.
+            Java as a programming language is omnipresent in web, 
+            Android apps, banking and finance software, desktop, and so on.
 
             </p>
             <button className='button'>Visit Now</button>

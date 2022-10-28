@@ -9,6 +9,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: #e3eddf7;
                                                                                                                                            
 `
 
@@ -16,7 +17,7 @@ const Title = styled.h3`
     font-size: 22px;
     width: 100%;
     color: #046A38;
-    margin: 20px 0;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,65 +63,74 @@ const Span = styled.span`
     font-size: 17px;
     text-align: center;
     margin: 20px;
-    padding: 20px;
 `
 
-const FaqContainer = styled.div`
+const FaqContainer = styled.ul`
+margin: 20px 60px;
 width: 80%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-.active{
-    background-color: #ccc;
-  }
-`
-
-const Item = styled.div`
-width: 100%;
 
 `
 
-const Button = styled.button`
-background-color: #eee;
-color: #444;
-cursor: pointer;
-padding: 18px;
-width: 100%;
-text-align: left;
-border: none;
-outline: none;
-transition: 0.4s;
+const Item = styled.li`
+    list-style: none;
+    width: 100%;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #e3edf7;
+    box-shadow: 6px 6px 10px -1px #555, -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
 
-&:hover {
-    background-color: #ccc;
-  }
+   
+    
+    input[type="radio"]:checked + label + .content{
+        max-height: 400px;
+        padding: 10px 10px 20px;
+    }
+
+    input[type="radio"]:checked + label::after{
+        content: "-";
+    }
 `
 
-const Panel = styled.div`
-padding: 0 18px;
-background-color: white;
-display: none;
-overflow: hidden;
-cursor:pointer;
-&:hover{
-    background:#f0fefe;
-  }
+const Label = styled.label`
+   width: 100%;
+   display: flex;
+   align-items: center;
+   padding: 10px; 
+   font-size: 18px;
+   font-weight: 500;
+   cursor: pointer;
+   position: relative;
+
+   &::after{
+    content: "+";
+    margin: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    position: absolute;
+    right: 5px;
+
+   }
+`
+
+const Input = styled.input`
+    display: none;
+
+`
+
+const Content = styled.div`
+    color: #555;
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height: 0.5s, padding o.5s;
 `
 
 export const About = () => {
-    const handleToggle = (e) => {
-        e.classList.toggle("active");
-        var panel = e.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-          } else {
-            panel.style.display = "block";
-        }
-    }
   return (
     <Container>
-        <Title>LEARN WITH CODESHERE</Title>
+        <Title>LEARN WITH CODESPHERE</Title>
         <Description>
             The world is expanding digitally and with every aspect of our lives becoming digital,
             the demand for computer experts is skyrocketing each day. Therefore,
@@ -128,16 +138,18 @@ export const About = () => {
             In fact, programming languages sit at the epicentre of this ever-growing field of Computer Science.
             If you are a beginner in programming, learning a new language or a new framework is essential.
         </Description>
-        <Span>FAQ</Span>
+        <Span id="faq">FAQ</Span>
         <FaqContainer>
-            <Item>
-                <Button onClick ={handleToggle}>
-                    Websites
-                </Button>
-                <Panel>
-                   <p >W3Schools</p>
-                   <p >freeCodeCamp</p>
-                </Panel>
+            <Item >
+                <Input type="radio" name="accordion" id="first" ></Input>
+                <Label htmlFor="first">Mobile</Label>
+                <Content className="content">
+                    <p>
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                       Voluptate corporis nulla illum cumque inventore sint maxime error incidunt accusantium nisi. 
+                       Possimus velit impedit eius voluptatum rerum vel ab itaque iste.
+                    </p>
+                </Content>
             </Item>
         </FaqContainer>
         <Span>Connect with us</Span>
