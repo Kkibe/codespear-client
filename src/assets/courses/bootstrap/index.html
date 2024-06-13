@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="./style.css"/>
+  </head>
+<body>
+<!-- partial:index.partial.html -->
+<nav id="navbar">
+  <header>Bootstrap Documentation</header>
+  <ul>
+    <li><a class="nav-link" href="#introduction" rel="internal">Introduction</a></li>
+    <li><a class="nav-link" href="#origins" rel="internal">Origins</a></li>
+    <li><a class="nav-link" href="#features" rel="internal">Features</a></li>
+    <li><a class="nav-link" href="#struture-and-function" rel="internal">Structure and function</a></li>
+    <li><a class="nav-link" href="#stylesheets" rel="internal">Stylesheets</a></li>
+    <li><a class="nav-link" href="#re-usable-components" rel="internal">Re-usable Components</a></li>
+    <li><a class="nav-link" href="#javascript-components" rel="internal">JavaScript Components</a></li>
+    <li><a class="nav-link" href="#bootstrap-4" rel="internal">Bootstrap 4</a></li>
+    <li><a class="nav-link" href="#reference" rel="internal">Reference</a></li>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="introduction">
+    <header>Introduction</header>
+      <article>
+        <p>Bootstrap is a free and open-source front-end web framework for designing websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions. Unlike many web frameworks, it concerns itself with front-end development only.</p>
+        <p>Bootstrap is the second most-starred project on GitHub, with more than 111,600 stars and 51,500 forks.</p>
+        
+      </article>
+  </section>
+  <section class="main-section" id="origins">
+    <header>Origins</header>
+      <article>
+        <p>Bootstrap, originally named Twitter Blueprint, was developed by Mark Otto and Jacob Thornton at Twitter as a framework to encourage consistency across internal tools. Before Bootstrap, various libraries were used for interface development, which led to inconsistencies and a high maintenance burden. According to Twitter developer Mark Otto:</p>
+        <blockquote>"A super small group of developers and I got together to design and build a new internal tool and saw an opportunity to do something more. Through that process, we saw ourselves build something much more substantial than another internal tool. Months later, we ended up with an early version of Bootstrap as a way to document and share common design patterns and assets within the company."
+        </blockquote>
+      <p>After a few months of development by a small group, many developers at Twitter began to contribute to the project as a part of Hack Week, a hackathon-style week for the Twitter development team. It was renamed from Twitter Blueprint to Bootstrap, and released as an open source project on August 19, 2011.It has continued to be maintained by Mark Otto, Jacob Thornton, and a small group of core developers, as well as a large community of contributors.</p>
+    </article>
+  </section>
+  <section class="main-section" id="features">
+    <header>Features</header>
+      <article>
+        <p>Bootstrap 3 supports the latest versions of the Google Chrome, Firefox, Internet Explorer, Opera, and Safari (except on Windows). It additionally supports back to IE8 and the latest Firefox Extended Support Release (ESR).</p>
+
+       <p>Since 2.0, Bootstrap supports responsive web design. This means the layout of web pages adjusts dynamically, taking into account the characteristics of the device used (desktop, tablet, mobile phone).</p>
+
+       <p>Starting with version 3.0, Bootstrap adopted a mobile-first design philosophy, emphasizing responsive design by default.</p>
+
+       <p>The version 4.0 alpha release added Sass and flexbox support.</p>
+     </article>
+ </section>
+ <section class="main-section" id="struture-and-function">
+   <header>Struture And Function</header>
+     <article>
+       <p>Bootstrap is modular and consists of a series of Less stylesheets that implement the various components of the toolkit. These stylesheets are generally compiled into a bundle and included in web pages, but individual components can be included or removed. Bootstrap provides a number of configuration variables that control things such as color and padding of various components.</p>
+
+       <p>Since Bootstrap 2, the Bootstrap documentation has included a customization wizard which generates a customized version of Bootstrap based on the requested components and various settings.</p>
+
+       <p>As of Bootstrap 4, Sass is used instead of Less for the stylesheets.</p>
+
+       <p>Each Bootstrap component consists of an HTML structure, CSS declarations, and in some cases accompanying JavaScript code.</p>
+
+       <p>Grid system and responsive design comes standard with an 1170 pixel wide grid layout. Alternatively, the developer can use a variable-width layout. For both cases, the toolkit has four variations to make use of different resolutions and types of devices: mobile phones, portrait and landscape, tablets and PCs with low and high resolution. Each variation adjusts the width of the columns.</p>
+     </article>
+  </section>
+  <section class="main-section" id="stylesheets">
+    <header>Stylesheets</header>
+      <article>
+        <p>Bootstrap provides a set of stylesheets that provide basic style definitions for all key HTML components. These provide a uniform, modern appearance for formatting text, tables and form elements.</p>
+      </article>
+  </section>
+  <section class="main-section" id="re-usable-components">
+    <header>Re-usable Components</header>
+      <article>
+        <p>In addition to the regular HTML elements, Bootstrap contains other commonly used interface elements. The components are implemented as CSS classes, which must be applied to certain HTML elements in a page.</p>
+      </article>
+  </section>
+  <section class="main-section" id="javascript-components">
+    <header>JavaScript Components</header>
+      <article>
+        <p>Bootstrap comes with several JavaScript components in the form of jQuery plugins. They provide additional user interface elements such as dialog boxes, tooltips, and carousels. They also extend the functionality of some existing interface elements, including for example an auto-complete function for input fields. In version 2.0, the following JavaScript plugins are supported: Modal, Dropdown, Scrollspy, Tab, Tooltip, Popover, Alert, Button, Collapse, Carousel and Typeahead.</p>
+      </article>
+  </section>
+  <section class="main-section" id="bootstrap-4">
+    <header>Bootstrap 4</header>
+      <p>On October 29, 2014, Mark Otto announced that Bootstrap 4 was in development.[9] On September 6, 2016, Mark suspended work on Bootstrap 3 in order to free up time to work on Bootstrap 4. Over 4,000 commits have been made to the Bootstrap 4 codebase so far.</p>
+
+      <p>Bootstrap 4 is almost a complete rewrite from Bootstrap 3. Significant changes include:</p>
+        <ul>
+<li>Switched from Less to Sass.</li>
+<li>Dropped IE8, IE9, and iOS 6 support.</li>
+<li>Added flexbox support and then dropped non-flexbox support.</li>
+<li>Switched from pixels to root ems.</li>
+<li>Increased global font-size from 14px to 16px.</li>
+<li>Dropped the panel, thumbnail, and well components in favor of cards.</li>
+<li>Dropped the Glyphicons icon font.</li>
+<li>Dropped the pager component.</li>
+<li>Rewrote almost all components, jQuery plugins and documentation.</li>
+        </ul>
+    </article>
+  </section>
+  <section class="main-section" id="reference">
+    <header>Reference</header>
+      <article>
+      <p>All the documentation in this page is taken from <a href="https://en.m.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank">Wikipedia</a></p>
+      </article>
+  </section>
+</main>
+<!-- partial -->
+  <script  src="./script.js"></script>
+</body>
+</html>

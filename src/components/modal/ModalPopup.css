@@ -1,0 +1,14 @@
+.modal{
+    width: 100%;
+    max-width: 400px;
+    min-height: 70vh;
+    height: max-content;
+    margin: 10px auto;
+    box-shadow: var(--box-shadow);
+    background: var(--secondary);
+    padding: 30px;
+    border-radius: 5px;
+    position: fixed;
+    top: 100px;
+    z-index: 99;
+}

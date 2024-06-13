@@ -1,6 +1,13 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Codepear Dev",
+  "name": "Codespear Dev",
+  "description": "Learn to code for free from codespear dev. Learn to be a software engineer ang get hired in big companies like google",
+  "private": true,
+  "version": "0.0.0",
+  "tags": [
+      "code", "jobs", "IoT", "chatbot", "purple", "resources", "pdf", "html", "javascript", "firebase", "json",
+      "data mining", "aptitude", "data", "cryptography", "technology", "robotics", "seo"
+  ],
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,0 +1,161 @@
+.container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    @media screen and (max-width: 780px){
+        flex-direction: column;
+        align-items: center;
+        *{
+            width: 100%;
+        }
+    }
+}
+
+.post{
+    width: 70vw;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 780px){
+        width: 95vw;
+    }
+}
+
+.info{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+hr{
+    width: 80%;
+    height: 1px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+
+.comments{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.commentsTitle{
+    font-size: 18px;
+    font-weight: 600;
+    color: darkcyan;
+}
+
+.compose{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    @media screen and (max-width: 570px){
+        width: 90%;
+    }
+}
+
+.composeImg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: fill;
+    object-position: center;
+}
+
+.composeInput{
+    width: 90%;
+    height: 45px;
+    border-radius: 0px 10px 10px 0px;
+    border: none ;
+    outline: none;
+    padding: 5px;
+}
+
+.allComments{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    @media screen and (max-width: 570px){
+        width: 90%;      
+    }
+}
+
+.comment{
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message{
+    width: 80%;
+}
+
+.relatedPosts{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    @media screen and (max-width: 780px){
+        width: 100%;
+    }
+
+    @media screen and (max-width: 570px){
+        width: 100%;
+    }
+}
+
+.related{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    @media screen and (max-width: 780px){
+        flex-direction: row;
+        width: 100%;
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+}
+
+.relatedPost{
+    width: 250px;
+    height: 290px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    &:hover{
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+    }
+}
+

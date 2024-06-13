@@ -1,0 +1,32 @@
+{
+  "short_name": "Codepear Dev",
+  "name": "Codespear Dev",
+  "description": "Learn to code for free from codespear dev. Learn to be a software engineer ang get hired in big companies like google",
+  "private": true,
+  "version": "0.0.0",
+  "tags": [
+      "code", "jobs", "IoT", "chatbot", "purple", "resources", "pdf", "html", "javascript", "firebase", "json",
+      "data mining", "aptitude", "data", "cryptography", "technology", "robotics", "seo"
+  ],
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

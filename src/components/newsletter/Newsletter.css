@@ -1,0 +1,35 @@
+.newsletter{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: var(--black);
+    padding: 5px 0;
+}
+
+.newsletter .wrapper{
+    width: 90%;
+    max-width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.newsletter .wrapper input{
+    flex: 4;
+    background: var(--dark-grey);
+    color: var(--lite);
+    margin: 0;
+    border-radius: 0;
+}
+
+.newsletter .wrapper button{
+    flex: 1;
+    margin: 0;
+}
