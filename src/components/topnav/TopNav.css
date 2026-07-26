@@ -109,6 +109,20 @@
   gap: var(--space-2);
 }
 
+.topnav__admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background: var(--primary-soft);
+  color: var(--primary-soft-text);
+  transition: all var(--dur-fast) var(--ease);
+}
+.topnav__admin-badge:hover { transform: translateY(-1px); }
+
 .topnav__user { position: relative; }
 .topnav__user-btn {
   display: flex;

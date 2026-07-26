@@ -24,6 +24,8 @@
   align-items: center;
 }
 .course-hero__title { margin: var(--space-4) 0 var(--space-3); }
+.course-hero__title-row { display: flex; align-items: flex-start; gap: var(--space-3); }
+.course-hero__title-row .h2 { margin: 0; }
 .course-hero__stats {
   display: flex;
   flex-wrap: wrap;
@@ -72,6 +74,17 @@
   border-bottom: 1px solid var(--border);
   margin-bottom: var(--space-3);
 }
+.course-sidebar__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
 .course-sidebar__list { display: flex; flex-direction: column; gap: var(--space-1); }
 .course-sidebar__item {
   display: flex;
@@ -103,8 +116,33 @@
 .course-sidebar__label { font-size: 0.9rem; color: var(--text-secondary); }
 
 .course-content__card { padding: var(--space-8); }
+.course-content__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
 .course-content__body { margin-top: var(--space-5); display: flex; flex-direction: column; gap: var(--space-4); }
 .course-content__body p { color: var(--text-secondary); }
+
+.course-content__iframe-wrap {
+  margin-top: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #fff;
+}
+.course-content__iframe { width: 100%; height: 480px; border: none; display: block; background: #fff; }
+
+.course-content__locked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding: var(--space-12);
+  margin-top: var(--space-5);
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+}
+.course-content__locked h3 { color: var(--text); }
+.course-content__locked p { margin-bottom: var(--space-2); }
 .course-content__nav {
   display: flex;
   justify-content: space-between;

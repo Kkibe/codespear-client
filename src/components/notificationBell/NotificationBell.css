@@ -1,0 +1,81 @@
+.notif { position: relative; }
+.notif__btn { position: relative; }
+.notif__badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: var(--radius-full);
+  background: var(--error-500);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif__panel {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  right: 0;
+  width: 340px;
+  max-width: 90vw;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  z-index: 110;
+  overflow: hidden;
+}
+.notif__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border);
+  font-weight: 700;
+}
+.notif__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+.notif__list { max-height: 360px; overflow-y: auto; }
+.notif__empty { padding: var(--space-6); text-align: center; color: var(--text-muted); font-size: 0.88rem; }
+
+.notif__item {
+  display: flex;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--dur-fast) var(--ease);
+}
+.notif__item:hover { background: var(--bg-subtle); }
+.notif__item.unread { background: var(--primary-soft); }
+.notif__item.unread:hover { background: color-mix(in srgb, var(--primary-soft) 80%, var(--bg-subtle)); }
+
+.notif__dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+  background: var(--text-muted);
+}
+.notif__dot--success { background: var(--success-500); }
+.notif__dot--info { background: var(--info-500); }
+.notif__dot--warning { background: var(--accent-500); }
+.notif__dot--error { background: var(--error-500); }
+
+.notif__content { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.notif__title { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+.notif__body { font-size: 0.8rem; color: var(--text-secondary); }
+.notif__time { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }

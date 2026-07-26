@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Search, Menu, X, Sun, Moon, LogOut, LayoutDashboard, ChevronDown } from 'lucide-react';
+import { Search, Menu, X, Sun, Moon, LogOut, LayoutDashboard, ChevronDown, ShieldCheck } from 'lucide-react';
 import { useAuth } from '../../AuthContext';
 import { useTheme } from '../../ThemeContext';
+import { NotificationBell } from '../notificationBell/NotificationBell';
 import './TopNav.css';
 
 const NAV_LINKS = [
@@ -106,6 +107,13 @@ export function TopNav() {
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
+          {user && <NotificationBell />}
+          {profile?.is_admin && (
+            <Link to="/admin" className="topnav__admin-badge" aria-label="Admin panel">
+              <ShieldCheck size={16} /> Admin
+            </Link>
+          )}
+
           {user ? (
             <div className="topnav__user" ref={menuRef}>
               <button className="topnav__user-btn" onClick={() => setMenuOpen((o) => !o)} aria-label="Account menu">
@@ -125,6 +133,11 @@ export function TopNav() {
                   <Link to="/dashboard" className="topnav__menu-item" onClick={() => setMenuOpen(false)}>
                     <LayoutDashboard size={18} /> Dashboard
                   </Link>
+                  {profile?.is_admin && (
+                    <Link to="/admin" className="topnav__menu-item" onClick={() => setMenuOpen(false)}>
+                      <ShieldCheck size={18} /> Admin panel
+                    </Link>
+                  )}
                   <button className="topnav__menu-item topnav__menu-item--danger" onClick={handleSignOut}>
                     <LogOut size={18} /> Sign out
                   </button>
@@ -170,6 +183,11 @@ export function TopNav() {
             {user && (
               <NavLink to="/dashboard" className="topnav__mobile-link" onClick={() => setMobileOpen(false)}>
                 Dashboard
+              </NavLink>
+            )}
+            {user && profile?.is_admin && (
+              <NavLink to="/admin" className="topnav__mobile-link" onClick={() => setMobileOpen(false)}>
+                Admin panel
               </NavLink>
             )}
           </nav>
