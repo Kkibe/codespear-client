@@ -1,56 +1,68 @@
-import { ArrowUpward, Facebook, Instagram, LinkedIn, Pinterest, Twitter, YouTube } from '@mui/icons-material';
-import React from 'react';
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from 'react-router-dom';
+import { Facebook, Twitter, Instagram, Linkedin, Github, Youtube, ArrowUp, Code2 } from 'lucide-react';
 import './Footer.css';
 
+const SOCIALS = [
+  { icon: Twitter, href: '#', label: 'Twitter' },
+  { icon: Github, href: '#', label: 'GitHub' },
+  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Facebook, href: '#', label: 'Facebook' },
+];
 
-export const Footer = (props) => {
-    const handleScroll = () => {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-      })}
+export function Footer() {
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   return (
-    <footer>
-        <div className='wrapper'>
-            <h2 className='light'>Quick Links</h2>
-            <hr />
-            <NavLink to='/' className={'link'} title='Front-end Web development'>Front-end Development</NavLink>
-            <NavLink to='/register' className={'link'} title='Get Started'> Get Started</NavLink>
-            <NavLink to='/about' className={'link'} title='Success Stories'>Success Stories</NavLink>
-            <NavLink to='/blogs' className={'link'} title='Read Blogs'>Read Blogs</NavLink>
-        </div>
-        <div className='wrapper'>
-            <h2 className='light'>Codespear</h2>
-            <hr />
-            <NavLink to='/courses' className={'link'} reloadDocument title='Course'>Courses</NavLink>
-            <NavLink to='/about' className={'link'} reloadDocument title='About US'>About Us</NavLink>
-            <NavLink to='/contact' className={'link'} reloadDocument title='Get In Touch'>Contact Us</NavLink>
-            <NavLink to='/resources' className={'link'} title='Resources'>Explore Resources</NavLink>
-        </div>
-        <div className='wrapper'>
-            <h2 className='light'>Contact us</h2>
-            <hr />
-            <div className='social'>
-                <Link to='/'><Facebook/></Link>
-                <Link to='/'><Twitter/></Link>
-                <Link to='/'><Instagram/></Link>
-                <Link to='/'><Pinterest/></Link>
-                <Link to='/'><LinkedIn/></Link>
-                <Link to='/'><YouTube/></Link>
-            </div>
-            <button onClick={handleScroll} className='button to-top' title='scroll to top'>
-                <ArrowUpward/>
-            </button>
-        </div>
-        
-        <div className='footer-bottom'>
-            <p>&copy;2022</p>
-            <p><NavLink className='link' to='/' reloadDocument title='Terms & Privacy'>Terms & Privacy</NavLink></p>
-            <p><NavLink className='link' to='/about/#faq' reloadDocument title='What People Ask'>FAQ</NavLink></p>
+    <footer className="footer">
+      <div className="container footer__inner">
+        <div className="footer__brand">
+          <Link to="/" className="footer__logo">
+            <Code2 size={28} />
+            <span>Codespear</span>
+          </Link>
+          <p className="footer__tagline">
+            Learn to code. Build the future. Curated courses, resources, and articles for the modern developer.
+          </p>
+          <div className="footer__socials">
+            {SOCIALS.map((s) => (
+              <a key={s.label} href={s.href} aria-label={s.label} className="footer__social">
+                <s.icon size={18} />
+              </a>
+            ))}
+          </div>
         </div>
 
+        <div className="footer__cols">
+          <div className="footer__col">
+            <h4>Platform</h4>
+            <NavLink to="/courses" className="footer__link">Courses</NavLink>
+            <NavLink to="/blog" className="footer__link">Blog</NavLink>
+            <NavLink to="/resources" className="footer__link">Resources</NavLink>
+            <NavLink to="/dashboard" className="footer__link">Dashboard</NavLink>
+          </div>
+          <div className="footer__col">
+            <h4>Company</h4>
+            <NavLink to="/about" className="footer__link">About us</NavLink>
+            <NavLink to="/contact" className="footer__link">Contact</NavLink>
+            <NavLink to="/register" className="footer__link">Get started</NavLink>
+            <NavLink to="/about" className="footer__link">FAQ</NavLink>
+          </div>
+          <div className="footer__col">
+            <h4>Legal</h4>
+            <a href="#" className="footer__link">Terms &amp; Privacy</a>
+            <a href="#" className="footer__link">Cookie Policy</a>
+            <a href="#" className="footer__link">Code of Conduct</a>
+          </div>
+        </div>
+      </div>
+
+      <div className="container footer__bottom">
+        <p>&copy; {new Date().getFullYear()} Codespear. All rights reserved.</p>
+        <button className="footer__top" onClick={scrollTop} aria-label="Back to top">
+          <ArrowUp size={16} /> Back to top
+        </button>
+      </div>
     </footer>
-  )
+  );
 }

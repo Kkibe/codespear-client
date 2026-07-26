@@ -1,59 +1,53 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
-import { useAuth } from './firebase';
-import { ArrowUpward, Message } from '@mui/icons-material';
-
+import { Suspense, lazy } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { TopNav } from './components/topnav/TopNav';
 import { Newsletter } from './components/newsletter/Newsletter';
 import { Footer } from './components/footer/Footer';
-import ModalPopup from './components/modal/ModalPopup';
-
 
 import { Home } from './pages/home/Home';
 import { Courses } from './pages/courses/Courses';
-import {Blogs} from './pages/blogs/Blogs';
 import { About } from './pages/about/About';
 import { Contact } from './pages/contact/Contact';
-import {Resources} from './pages/resources/Resources';
-import { Error } from './pages/error/Error';
+import { Resources } from './pages/resources/Resources';
 import { Login } from './pages/auth/Login';
 import { Register } from './pages/auth/Register';
-import { Blog } from './pages/blogs/Blog';
+import { Blogs } from './pages/blogs/Blogs';
+import { Error } from './pages/error/Error';
 import Course from './pages/courses/Course';
+import Blog from './pages/blogs/Blog';
+import Dashboard from './pages/dashboard/Dashboard';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 export default function App() {
-  const signedUser = useAuth();
-  const [user, setUser] = useState('');
-  useEffect(() => {
-    setUser(signedUser);
-  }, [signedUser]);
-
   return (
-    <main>
+    <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <TopNav />
-      <ModalPopup />
-      <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='courses' element={<Courses />} />
-          <Route path='courses/:id' element={<Course />} />
-          <Route path='blog' element={<Blogs />} />
-          <Route path='blog/:id' element={<Blog />} />
-          <Route path='about' element={<About />} />
-          <Route path='contact' element={<Contact />} />
-          <Route path='resources' element={<Resources />} />
-          <Route path='register' element={!user ? <Register /> : () => {return}} />
-          <Route path='login' element={!user ? <Login /> : () => {return}} /> 
-          <Route path="*"  element={<Error />} />
-      </Routes>
+      <ScrollToTop />
+      <main id="main" style={{ flex: 1 }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:slug" element={<Course />} />
+          <Route path="/blog" element={<Blogs />} />
+          <Route path="/blog/:slug" element={<Blog />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </main>
       <Newsletter />
       <Footer />
-      <button className='button chatbot' title='chat with us'>
-        <Message/>
-      </button>
-    </main>
-  )
+    </>
+  );
 }
