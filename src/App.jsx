@@ -14,25 +14,14 @@ import { Login } from './pages/auth/Login';
 import { Register } from './pages/auth/Register';
 import { Blogs } from './pages/blogs/Blogs';
 import { Error } from './pages/error/Error';
-import { Pricing } from './pages/pricing/Pricing';
-import { Terms } from './pages/legal/Terms';
-import { Privacy } from './pages/legal/Privacy';
-import { Cookies } from './pages/legal/Cookies';
-import { Conduct } from './pages/legal/Conduct';
-
-const Course = lazy(() => import('./pages/courses/Course'));
-const Blog = lazy(() => import('./pages/blogs/Blog'));
-const Dashboard = lazy(() => import('./pages/dashboard/Dashboard'));
-const Admin = lazy(() => import('./pages/admin/Admin'));
+import Course from './pages/courses/Course';
+import Blog from './pages/blogs/Blog';
+import Dashboard from './pages/dashboard/Dashboard';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;
-}
-
-function PageFallback() {
-  return <div className="page"><div className="loading-screen"><div className="spinner spinner-lg" /></div></div>;
 }
 
 export default function App() {
@@ -45,21 +34,15 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
-          <Route path="/courses/:slug" element={<Suspense fallback={<PageFallback />}><Course /></Suspense>} />
-          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/courses/:slug" element={<Course />} />
           <Route path="/blog" element={<Blogs />} />
-          <Route path="/blog/:slug" element={<Suspense fallback={<PageFallback />}><Blog /></Suspense>} />
+          <Route path="/blog/:slug" element={<Blog />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/dashboard" element={<Suspense fallback={<PageFallback />}><Dashboard /></Suspense>} />
-          <Route path="/admin" element={<Suspense fallback={<PageFallback />}><Admin /></Suspense>} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/cookies" element={<Cookies />} />
-          <Route path="/conduct" element={<Conduct />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </main>

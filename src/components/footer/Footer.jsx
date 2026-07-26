@@ -45,14 +45,14 @@ export function Footer() {
             <h4>Company</h4>
             <NavLink to="/about" className="footer__link">About us</NavLink>
             <NavLink to="/contact" className="footer__link">Contact</NavLink>
-            <NavLink to="/pricing" className="footer__link">Pricing</NavLink>
             <NavLink to="/register" className="footer__link">Get started</NavLink>
+            <NavLink to="/about" className="footer__link">FAQ</NavLink>
           </div>
           <div className="footer__col">
             <h4>Legal</h4>
-            <NavLink to="/terms" className="footer__link">Terms &amp; Privacy</NavLink>
-            <NavLink to="/cookies" className="footer__link">Cookie Policy</NavLink>
-            <NavLink to="/conduct" className="footer__link">Code of Conduct</NavLink>
+            <a href="#" className="footer__link">Terms &amp; Privacy</a>
+            <a href="#" className="footer__link">Cookie Policy</a>
+            <a href="#" className="footer__link">Code of Conduct</a>
           </div>
         </div>
       </div>

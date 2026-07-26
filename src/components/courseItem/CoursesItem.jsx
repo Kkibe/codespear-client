@@ -9,11 +9,6 @@ export function CourseItem({ course }) {
       <div className="course-card__media">
         <img src={course.image_url} alt={course.title} loading="lazy" />
         <span className={`course-card__level course-card__level--${level.toLowerCase()}`}>{level}</span>
-        {Number(course.price) > 0 ? (
-          <span className="course-card__price">{course.currency} {Number(course.price).toFixed(2)}</span>
-        ) : (
-          <span className="course-card__price course-card__price--free">Free</span>
-        )}
       </div>
       <div className="course-card__body">
         <div className="course-card__meta">
@@ -38,7 +33,7 @@ export function CourseItem({ course }) {
           )}
         </div>
         <div className="course-card__cta">
-          <span>{Number(course.price) > 0 ? 'Get access' : 'Start learning'}</span>
+          <span>Start learning</span>
           <ArrowRight size={16} />
         </div>
       </div>

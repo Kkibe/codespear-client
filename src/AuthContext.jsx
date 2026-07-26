@@ -15,7 +15,7 @@ export function AuthProvider({ children }) {
     }
     const { data } = await supabase
       .from('profiles')
-      .select('id, username, avatar_url, bio, is_admin, created_at')
+      .select('id, username, avatar_url, bio, created_at')
       .eq('id', userId)
       .maybeSingle();
     setProfile(data);
@@ -53,7 +53,7 @@ export function AuthProvider({ children }) {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { username } },
+      options: { data: { display_name: username } },
     });
     if (error) throw error;
     return data;
