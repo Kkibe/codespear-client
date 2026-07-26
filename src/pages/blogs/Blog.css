@@ -73,3 +73,29 @@
 .comment__author { font-weight: 600; font-size: 0.9rem; color: var(--text); }
 .comment__date { font-size: 0.78rem; color: var(--text-muted); }
 .comment__text { font-size: 0.92rem; color: var(--text-secondary); }
+
+/* Like + share actions */
+.blog-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-block: var(--space-4);
+  border-block: 1px solid var(--border);
+}
+.blog-action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all var(--dur-fast) var(--ease);
+}
+.blog-action:hover { background: var(--surface); border-color: var(--border-strong); color: var(--text); transform: translateY(-1px); }
+.blog-action--liked { background: var(--error-50); color: var(--error-500); border-color: transparent; }
+[data-theme='dark'] .blog-action--liked { background: rgba(239,68,68,0.12); }
+.blog-action__label { font-weight: 500; color: var(--text-muted); }

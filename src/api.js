@@ -394,3 +394,52 @@ export async function adminToggleUserAdmin(userId, isAdmin) {
   if (error) throw error;
 }
 
+/* ----------------- Blog likes ----------------- */
+
+export async function fetchBlogLikes(blogId) {
+  const { count, error } = await supabase
+    .from('blog_likes')
+    .select('id', { count: 'exact', head: true })
+    .eq('blog_id', blogId);
+  if (error) throw error;
+  return count ?? 0;
+}
+
+export async function hasUserLikedBlog(userId, blogId) {
+  if (!userId) return false;
+  const { data, error } = await supabase
+    .from('blog_likes')
+    .select('id')
+    .eq('user_id', userId)
+    .eq('blog_id', blogId)
+    .maybeSingle();
+  if (error) throw error;
+  return !!data;
+}
+
+export async function likeBlog(userId, blogId) {
+  const { data, error } = await supabase
+    .from('blog_likes')
+    .insert({ user_id: userId, blog_id: blogId })
+    .select()
+    .maybeSingle();
+  if (error && !error.message.includes('duplicate')) throw error;
+  return data;
+}
+
+export async function unlikeBlog(userId, blogId) {
+  const { error } = await supabase
+    .from('blog_likes')
+    .delete()
+    .eq('user_id', userId)
+    .eq('blog_id', blogId);
+  if (error) throw error;
+}
+
+export async function incrementBlogViews(blogId) {
+  const { error } = await supabase.rpc('increment_blog_views', { blog_id: blogId });
+  if (error) {
+    // rpc may not exist; fall back silently
+  }
+}
+

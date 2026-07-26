@@ -35,6 +35,20 @@
 .course-card__level--intermediate { color: var(--accent-600); }
 .course-card__level--advanced { color: var(--error-500); }
 
+.course-card__price {
+  position: absolute;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  background: var(--accent-500);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.course-card__price--free { background: var(--success-500); }
+
 .course-card__body {
   display: flex;
   flex-direction: column;

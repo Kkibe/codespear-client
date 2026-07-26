@@ -14,6 +14,11 @@ import { Login } from './pages/auth/Login';
 import { Register } from './pages/auth/Register';
 import { Blogs } from './pages/blogs/Blogs';
 import { Error } from './pages/error/Error';
+import { Pricing } from './pages/pricing/Pricing';
+import { Terms } from './pages/legal/Terms';
+import { Privacy } from './pages/legal/Privacy';
+import { Cookies } from './pages/legal/Cookies';
+import { Conduct } from './pages/legal/Conduct';
 
 const Course = lazy(() => import('./pages/courses/Course'));
 const Blog = lazy(() => import('./pages/blogs/Blog'));
@@ -41,6 +46,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:slug" element={<Suspense fallback={<PageFallback />}><Course /></Suspense>} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blogs />} />
           <Route path="/blog/:slug" element={<Suspense fallback={<PageFallback />}><Blog /></Suspense>} />
           <Route path="/resources" element={<Resources />} />
@@ -50,6 +56,10 @@ export default function App() {
           <Route path="/admin" element={<Suspense fallback={<PageFallback />}><Admin /></Suspense>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/conduct" element={<Conduct />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </main>

@@ -1,0 +1,55 @@
+.pricing-page { padding-top: calc(var(--nav-height) + var(--space-12)); }
+.pricing-page__head { text-align: center; margin-bottom: var(--space-16); }
+.pricing-page__head .eyebrow { margin-bottom: var(--space-4); }
+
+.pricing-plans { margin-bottom: var(--space-20); }
+
+/* Featured plan card (overrides) */
+.plan-card--featured {
+  border-color: var(--primary);
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.03);
+}
+.plan-card__ribbon {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: var(--text-on-brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+[data-theme='dark'] .plan-card__ribbon { color: var(--gray-950); }
+.plan-card--featured:hover { transform: scale(1.04) translateY(-2px); }
+
+/* Individual purchase section */
+.pricing-individual { margin-bottom: var(--space-20); }
+.pricing-individual__card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  background: linear-gradient(135deg, var(--primary-soft), var(--bg-elevated));
+}
+.pricing-individual__icon { color: var(--accent-500); flex-shrink: 0; }
+.pricing-individual__card h2 { margin-bottom: var(--space-2); }
+.pricing-individual__card p { margin-bottom: var(--space-4); }
+.pricing-individual__card .btn { flex-shrink: 0; }
+
+/* FAQ */
+.pricing-faqs { max-width: 760px; margin: 0 auto; }
+
+@media (max-width: 900px) {
+  .plan-card--featured { transform: none; }
+  .plan-card--featured:hover { transform: translateY(-2px); }
+}
+@media (max-width: 768px) {
+  .pricing-individual__card { flex-direction: column; text-align: center; }
+}

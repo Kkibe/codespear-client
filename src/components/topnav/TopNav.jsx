@@ -9,6 +9,7 @@ import './TopNav.css';
 const NAV_LINKS = [
   { to: '/', label: 'Home', end: true },
   { to: '/courses', label: 'Courses' },
+  { to: '/pricing', label: 'Pricing' },
   { to: '/blog', label: 'Blog' },
   { to: '/resources', label: 'Resources' },
   { to: '/about', label: 'About' },
@@ -114,6 +115,9 @@ export function TopNav() {
             </Link>
           )}
 
+          {user && (
+            <Link to="/pricing" className="btn btn-secondary btn-sm">View plans</Link>
+          )}
           {user ? (
             <div className="topnav__user" ref={menuRef}>
               <button className="topnav__user-btn" onClick={() => setMenuOpen((o) => !o)} aria-label="Account menu">
@@ -185,6 +189,11 @@ export function TopNav() {
                 Dashboard
               </NavLink>
             )}
+            {user && (
+              <NavLink to="/pricing" className="topnav__mobile-link" onClick={() => setMobileOpen(false)}>
+                Pricing
+              </NavLink>
+            )}
             {user && profile?.is_admin && (
               <NavLink to="/admin" className="topnav__mobile-link" onClick={() => setMobileOpen(false)}>
                 Admin panel
@@ -193,9 +202,12 @@ export function TopNav() {
           </nav>
           <div className="topnav__mobile-actions">
             {user ? (
-              <button className="btn btn-secondary btn-block" onClick={handleSignOut}>
-                <LogOut size={18} /> Sign out
-              </button>
+              <>
+                <Link to="/pricing" className="btn btn-primary btn-block" onClick={() => setMobileOpen(false)}>View plans</Link>
+                <button className="btn btn-secondary btn-block" onClick={handleSignOut}>
+                  <LogOut size={18} /> Sign out
+                </button>
+              </>
             ) : (
               <>
                 <Link to="/login" className="btn btn-secondary btn-block" onClick={() => setMobileOpen(false)}>Log in</Link>
