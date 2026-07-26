@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, BookOpen, Users, Award, Zap, Target, Code2, Rocket, GraduationCap } from 'lucide-react';
+import { ArrowRight, Sparkles, BookOpen, Users, Award, Zap, Target, Code as Code2, Rocket, GraduationCap } from 'lucide-react';
 import { CourseItem } from '../../components/courseItem/CoursesItem';
 import { BlogItem } from '../../components/blogItem/BlogItem';
 import { fetchCourses, fetchBlogs } from '../../api';

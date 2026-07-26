@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Clock, BarChart3, Users, Star, ArrowLeft, CheckCircle2, PlayCircle, BookOpen, Lock } from 'lucide-react';
+import { Clock, ChartBar as BarChart3, Users, Star, ArrowLeft, CircleCheck as CheckCircle2, CirclePlay as PlayCircle, BookOpen, Lock } from 'lucide-react';
 import { fetchCourseBySlug, fetchCourseSections, getEnrollment, enrollInCourse } from '../../api';
 import { useAuth } from '../../AuthContext';
 import './Course.css';

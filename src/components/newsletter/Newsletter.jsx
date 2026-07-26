@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Send, CircleCheck as CheckCircle2, Loader as Loader2 } from 'lucide-react';
 import { subscribeNewsletter } from '../../api';
 import './Newsletter.css';
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Clock, Send, Loader2, MessageCircle, User } from 'lucide-react';
+import { ArrowLeft, Clock, Send, Loader as Loader2, MessageCircle, User } from 'lucide-react';
 import { fetchBlogBySlug, fetchRelatedBlogs, fetchBlogComments, addBlogComment } from '../../api';
 import { useAuth } from '../../AuthContext';
 import './Blog.css';

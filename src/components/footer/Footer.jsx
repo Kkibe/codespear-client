@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Github, Youtube, ArrowUp, Code2 } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Github, Youtube, ArrowUp, Code as Code2 } from 'lucide-react';
 import './Footer.css';
 
 const SOCIALS = [

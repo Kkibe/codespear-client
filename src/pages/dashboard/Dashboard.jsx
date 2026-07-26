@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { BookOpen, Award, TrendingUp, Clock, CheckCircle2, PlayCircle, Loader2, Save, User, Sparkles } from 'lucide-react';
+import { BookOpen, Award, TrendingUp, Clock, CircleCheck as CheckCircle2, CirclePlay as PlayCircle, Loader as Loader2, Save, User, Sparkles } from 'lucide-react';
 import { useAuth } from '../../AuthContext';
 import { fetchUserEnrollments, updateEnrollmentProgress, fetchCourses } from '../../api';
 import './Dashboard.css';

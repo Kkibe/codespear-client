@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Home, ArrowLeft, Compass } from 'lucide-react';
+import { Chrome as Home, ArrowLeft, Compass } from 'lucide-react';
 import './Error.css';
 
 export const Error = () => (

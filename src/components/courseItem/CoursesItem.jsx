@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Clock, BarChart3, Users, Star, ArrowRight } from 'lucide-react';
+import { Clock, ChartBar as BarChart3, Users, Star, ArrowRight } from 'lucide-react';
 import './CourseItem.css';
 
 export function CourseItem({ course }) {
